@@ -21,7 +21,7 @@ ExerciseResponseDTO _$ExerciseResponseDTOFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ExerciseResponseDTO {
   String get id => throw _privateConstructorUsedError;
-  DateTime get createAt => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
   ExerciseType get type => throw _privateConstructorUsedError;
 
@@ -37,7 +37,7 @@ abstract class $ExerciseResponseDTOCopyWith<$Res> {
           ExerciseResponseDTO value, $Res Function(ExerciseResponseDTO) then) =
       _$ExerciseResponseDTOCopyWithImpl<$Res, ExerciseResponseDTO>;
   @useResult
-  $Res call({String id, DateTime createAt, String content, ExerciseType type});
+  $Res call({String id, DateTime createdAt, String content, ExerciseType type});
 }
 
 /// @nodoc
@@ -54,7 +54,7 @@ class _$ExerciseResponseDTOCopyWithImpl<$Res, $Val extends ExerciseResponseDTO>
   @override
   $Res call({
     Object? id = null,
-    Object? createAt = null,
+    Object? createdAt = null,
     Object? content = null,
     Object? type = null,
   }) {
@@ -63,9 +63,9 @@ class _$ExerciseResponseDTOCopyWithImpl<$Res, $Val extends ExerciseResponseDTO>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      createAt: null == createAt
-          ? _value.createAt
-          : createAt // ignore: cast_nullable_to_non_nullable
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       content: null == content
           ? _value.content
@@ -87,7 +87,7 @@ abstract class _$$_ExerciseResponseDTOCopyWith<$Res>
       __$$_ExerciseResponseDTOCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, DateTime createAt, String content, ExerciseType type});
+  $Res call({String id, DateTime createdAt, String content, ExerciseType type});
 }
 
 /// @nodoc
@@ -102,7 +102,7 @@ class __$$_ExerciseResponseDTOCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? createAt = null,
+    Object? createdAt = null,
     Object? content = null,
     Object? type = null,
   }) {
@@ -111,9 +111,9 @@ class __$$_ExerciseResponseDTOCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      createAt: null == createAt
-          ? _value.createAt
-          : createAt // ignore: cast_nullable_to_non_nullable
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       content: null == content
           ? _value.content
@@ -130,12 +130,13 @@ class __$$_ExerciseResponseDTOCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 @DateTimeConverter()
+@ExerciseTypeConverter()
 class _$_ExerciseResponseDTO
     with DiagnosticableTreeMixin
     implements _ExerciseResponseDTO {
   const _$_ExerciseResponseDTO(
       {required this.id,
-      required this.createAt,
+      required this.createdAt,
       required this.content,
       required this.type});
 
@@ -145,7 +146,7 @@ class _$_ExerciseResponseDTO
   @override
   final String id;
   @override
-  final DateTime createAt;
+  final DateTime createdAt;
   @override
   final String content;
   @override
@@ -153,7 +154,7 @@ class _$_ExerciseResponseDTO
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ExerciseResponseDTO(id: $id, createAt: $createAt, content: $content, type: $type)';
+    return 'ExerciseResponseDTO(id: $id, createdAt: $createdAt, content: $content, type: $type)';
   }
 
   @override
@@ -162,7 +163,7 @@ class _$_ExerciseResponseDTO
     properties
       ..add(DiagnosticsProperty('type', 'ExerciseResponseDTO'))
       ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('createAt', createAt))
+      ..add(DiagnosticsProperty('createdAt', createdAt))
       ..add(DiagnosticsProperty('content', content))
       ..add(DiagnosticsProperty('type', type));
   }
@@ -173,15 +174,15 @@ class _$_ExerciseResponseDTO
         (other.runtimeType == runtimeType &&
             other is _$_ExerciseResponseDTO &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.createAt, createAt) ||
-                other.createAt == createAt) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
             (identical(other.content, content) || other.content == content) &&
             (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, createAt, content, type);
+  int get hashCode => Object.hash(runtimeType, id, createdAt, content, type);
 
   @JsonKey(ignore: true)
   @override
@@ -201,7 +202,7 @@ class _$_ExerciseResponseDTO
 abstract class _ExerciseResponseDTO implements ExerciseResponseDTO {
   const factory _ExerciseResponseDTO(
       {required final String id,
-      required final DateTime createAt,
+      required final DateTime createdAt,
       required final String content,
       required final ExerciseType type}) = _$_ExerciseResponseDTO;
 
@@ -211,7 +212,7 @@ abstract class _ExerciseResponseDTO implements ExerciseResponseDTO {
   @override
   String get id;
   @override
-  DateTime get createAt;
+  DateTime get createdAt;
   @override
   String get content;
   @override

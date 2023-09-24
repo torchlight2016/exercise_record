@@ -18,17 +18,16 @@ void main() {
       10,
       (index) => ExerciseResponseDTO(
           id: (index + 1).toString(),
-          createAt: DateTime.now().copyWith(minute: index),
+          createdAt: DateTime.now().copyWith(minute: index),
           content: 'fighting #${index + 1}',
           type: ExerciseType.lunge));
 
   group('getExerciseList', () {
     test('get exercise list', () async {
-      when(() => mockExerciseApiClient.getExerciseList(0, 10))
+      when(() => mockExerciseApiClient.getExerciseList(1, 10))
           .thenAnswer((_) async => exerciseList);
 
-      final result = await exerciseRemoteDataSourceImpl.getExerciseList(0, 10);
-
+      final result = await exerciseRemoteDataSourceImpl.getExerciseList(1, 10);
       expect(result, equals(exerciseList));
     });
 
@@ -43,15 +42,16 @@ void main() {
   });
 
   group('addExerciseList', () {
-    final requestDTO =
-        ExerciseRequestDTO(content: 'fighting', createAt: DateTime.now());
+    final requestDTO = ExerciseRequestDTO(
+        type: ExerciseType.lunge,
+        content: 'fighting',
+        createAt: DateTime.now());
 
     test('add exercise list', () async {
       when(() => mockExerciseApiClient.addExercise(requestDTO))
           .thenAnswer((_) async => () {});
 
       mockExerciseApiClient.addExercise(requestDTO);
-
       verify(() => exerciseRemoteDataSourceImpl.addExercise(requestDTO));
     });
 

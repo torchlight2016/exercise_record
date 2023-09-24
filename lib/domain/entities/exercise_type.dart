@@ -8,6 +8,7 @@ enum ExerciseType {
   const ExerciseType(this.displayName);
 
   factory ExerciseType.getValue(String name) {
-    return ExerciseType.values.firstWhere((value) => value.name == name);
+    return ExerciseType.values
+        .firstWhere((value) => value.name == name, orElse: () => lunge);
   }
 }

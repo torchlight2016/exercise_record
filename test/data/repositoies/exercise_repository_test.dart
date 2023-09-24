@@ -24,7 +24,7 @@ void main() {
         10,
         (index) => ExerciseResponseDTO(
             id: (index + 1).toString(),
-            createAt: DateTime.now().copyWith(minute: index),
+            createdAt: DateTime.now().copyWith(minute: index),
             content: 'fighting #${index + 1}',
             type: ExerciseType.lunge));
 

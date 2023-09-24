@@ -3,6 +3,7 @@ import 'package:exercise_record/data/datasources/remote/exercise_remote_data_sou
 import 'package:exercise_record/data/dtos/response/exercise_request_dto.dart';
 import 'package:exercise_record/data/mapper/exercise_mapper.dart';
 import 'package:exercise_record/domain/entities/exercise.dart';
+import 'package:exercise_record/domain/entities/exercise_type.dart';
 import 'package:exercise_record/domain/repositories/exercise_repository.dart';
 
 class ExerciseRepositoryImpl extends ExerciseRepository {
@@ -11,10 +12,13 @@ class ExerciseRepositoryImpl extends ExerciseRepository {
   ExerciseRepositoryImpl(this.remoteDataSource);
 
   @override
-  Future<Result<void>> addExercise(
-      {required String content, required DateTime dateTime}) {
-    return Result.wrap(() => remoteDataSource
-        .addExercise(ExerciseRequestDTO(content: content, createAt: dateTime)));
+  Future<Result<void>> addExercise({
+    required ExerciseType type,
+    required String content,
+    required DateTime dateTime,
+  }) {
+    return Result.wrap(() => remoteDataSource.addExercise(
+        ExerciseRequestDTO(type: type, content: content, createAt: dateTime)));
   }
 
   @override

@@ -10,23 +10,17 @@ _$_ExerciseResponseDTO _$$_ExerciseResponseDTOFromJson(
         Map<String, dynamic> json) =>
     _$_ExerciseResponseDTO(
       id: json['id'] as String,
-      createAt: const DateTimeConverter().fromJson(json['createAt'] as String),
+      createdAt:
+          const DateTimeConverter().fromJson(json['createdAt'] as String),
       content: json['content'] as String,
-      type: $enumDecode(_$ExerciseTypeEnumMap, json['type']),
+      type: const ExerciseTypeConverter().fromJson(json['type'] as String),
     );
 
 Map<String, dynamic> _$$_ExerciseResponseDTOToJson(
         _$_ExerciseResponseDTO instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'createAt': const DateTimeConverter().toJson(instance.createAt),
+      'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'content': instance.content,
-      'type': _$ExerciseTypeEnumMap[instance.type]!,
+      'type': const ExerciseTypeConverter().toJson(instance.type),
     };
-
-const _$ExerciseTypeEnumMap = {
-  ExerciseType.lunge: 'lunge',
-  ExerciseType.squat: 'squat',
-  ExerciseType.pushUp: 'pushUp',
-  ExerciseType.legRaises: 'legRaises',
-};

@@ -1,3 +1,4 @@
+import 'package:exercise_record/domain/entities/exercise_type.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -7,6 +8,7 @@ part 'exercise_request_dto.g.dart';
 @freezed
 class ExerciseRequestDTO with _$ExerciseRequestDTO {
   const factory ExerciseRequestDTO({
+    required ExerciseType type,
     required String content,
     required DateTime createAt,
   }) = _ExerciseRequestDTO;

@@ -6,11 +6,11 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   const String jsonData =
-      '{"createAt":"2023-09-23T09:01:17.218Z","content":"fighting","type":"lunge","id":"1"}';
+      '{"createdAt":"2023-09-23T09:01:17.218Z","content":"fighting","type":"lunge","id":"1"}';
 
   final jsonDto = ExerciseResponseDTO(
       content: "fighting",
-      createAt: DateTime.utc(2023, 9, 23, 9, 1, 17, 218).toLocal(),
+      createdAt: DateTime.utc(2023, 9, 23, 9, 1, 17, 218).toLocal(),
       type: ExerciseType.lunge,
       id: "1");
 

@@ -20,6 +20,7 @@ ExerciseRequestDTO _$ExerciseRequestDTOFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ExerciseRequestDTO {
+  ExerciseType get type => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
   DateTime get createAt => throw _privateConstructorUsedError;
 
@@ -35,7 +36,7 @@ abstract class $ExerciseRequestDTOCopyWith<$Res> {
           ExerciseRequestDTO value, $Res Function(ExerciseRequestDTO) then) =
       _$ExerciseRequestDTOCopyWithImpl<$Res, ExerciseRequestDTO>;
   @useResult
-  $Res call({String content, DateTime createAt});
+  $Res call({ExerciseType type, String content, DateTime createAt});
 }
 
 /// @nodoc
@@ -51,10 +52,15 @@ class _$ExerciseRequestDTOCopyWithImpl<$Res, $Val extends ExerciseRequestDTO>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? type = null,
     Object? content = null,
     Object? createAt = null,
   }) {
     return _then(_value.copyWith(
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ExerciseType,
       content: null == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
@@ -75,7 +81,7 @@ abstract class _$$_ExerciseRequestDTOCopyWith<$Res>
       __$$_ExerciseRequestDTOCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String content, DateTime createAt});
+  $Res call({ExerciseType type, String content, DateTime createAt});
 }
 
 /// @nodoc
@@ -89,10 +95,15 @@ class __$$_ExerciseRequestDTOCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? type = null,
     Object? content = null,
     Object? createAt = null,
   }) {
     return _then(_$_ExerciseRequestDTO(
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ExerciseType,
       content: null == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
@@ -110,11 +121,14 @@ class __$$_ExerciseRequestDTOCopyWithImpl<$Res>
 class _$_ExerciseRequestDTO
     with DiagnosticableTreeMixin
     implements _ExerciseRequestDTO {
-  const _$_ExerciseRequestDTO({required this.content, required this.createAt});
+  const _$_ExerciseRequestDTO(
+      {required this.type, required this.content, required this.createAt});
 
   factory _$_ExerciseRequestDTO.fromJson(Map<String, dynamic> json) =>
       _$$_ExerciseRequestDTOFromJson(json);
 
+  @override
+  final ExerciseType type;
   @override
   final String content;
   @override
@@ -122,7 +136,7 @@ class _$_ExerciseRequestDTO
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ExerciseRequestDTO(content: $content, createAt: $createAt)';
+    return 'ExerciseRequestDTO(type: $type, content: $content, createAt: $createAt)';
   }
 
   @override
@@ -130,6 +144,7 @@ class _$_ExerciseRequestDTO
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'ExerciseRequestDTO'))
+      ..add(DiagnosticsProperty('type', type))
       ..add(DiagnosticsProperty('content', content))
       ..add(DiagnosticsProperty('createAt', createAt));
   }
@@ -139,6 +154,7 @@ class _$_ExerciseRequestDTO
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ExerciseRequestDTO &&
+            (identical(other.type, type) || other.type == type) &&
             (identical(other.content, content) || other.content == content) &&
             (identical(other.createAt, createAt) ||
                 other.createAt == createAt));
@@ -146,7 +162,7 @@ class _$_ExerciseRequestDTO
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, content, createAt);
+  int get hashCode => Object.hash(runtimeType, type, content, createAt);
 
   @JsonKey(ignore: true)
   @override
@@ -165,12 +181,15 @@ class _$_ExerciseRequestDTO
 
 abstract class _ExerciseRequestDTO implements ExerciseRequestDTO {
   const factory _ExerciseRequestDTO(
-      {required final String content,
+      {required final ExerciseType type,
+      required final String content,
       required final DateTime createAt}) = _$_ExerciseRequestDTO;
 
   factory _ExerciseRequestDTO.fromJson(Map<String, dynamic> json) =
       _$_ExerciseRequestDTO.fromJson;
 
+  @override
+  ExerciseType get type;
   @override
   String get content;
   @override
