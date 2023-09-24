@@ -1,4 +1,4 @@
-import 'package:exercise_record/exercise_record_app.dart';
+import 'package:exercise_record/presentation/main_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,12 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Exercise Record',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const ExerciseRecordApp(title: 'Exercise Record'),
+      home: const MainScreen(title: 'Exercise Record'),
     );
   }
 }
