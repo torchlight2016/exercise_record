@@ -7,10 +7,11 @@ part 'exercise_api_client.g.dart';
 
 @RestApi(baseUrl: 'https://6507f4c556db83a34d9b7fc1.mockapi.io/api/v1/')
 abstract class ExerciseApiClient {
-  @GET('exercise')
+  factory ExerciseApiClient(Dio dio, {String baseUrl}) = _ExerciseApiClient;
+  @GET('exercises')
   Future<List<ExerciseResponseDTO>> getExerciseList(
       @Query('page') int page, @Query('limit') int limit);
 
-  @POST('exercise')
+  @POST('exercises')
   Future<void> addExercise(@Body() ExerciseRequestDTO exercise);
 }

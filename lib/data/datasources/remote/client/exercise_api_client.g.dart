@@ -40,7 +40,7 @@ class _ExerciseApiClient implements ExerciseApiClient {
     )
             .compose(
               _dio.options,
-              'exercise',
+              'exercises',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -69,7 +69,7 @@ class _ExerciseApiClient implements ExerciseApiClient {
     )
         .compose(
           _dio.options,
-          'exercise',
+          'exercises',
           queryParameters: queryParameters,
           data: _data,
         )
